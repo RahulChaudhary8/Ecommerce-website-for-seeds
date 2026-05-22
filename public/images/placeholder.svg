@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect fill="#f0fdf4" width="400" height="300"/>
+  <circle cx="200" cy="120" r="48" fill="#bbf7d0"/>
+  <path fill="#16a34a" d="M200 72c-8 24-32 40-32 56 0 18 14 32 32 32s32-14 32-32c0-16-24-32-32-56z"/>
+  <text x="200" y="220" text-anchor="middle" fill="#166534" font-family="system-ui,sans-serif" font-size="14">Add shop photo</text>
+</svg>

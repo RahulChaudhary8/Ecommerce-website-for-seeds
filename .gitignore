@@ -1,0 +1,87 @@
+# =============================================================================
+# AgroSeeds — monorepo .gitignore (frontend + backend)
+# =============================================================================
+
+# --- OS & editor ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.sublime-project
+*.sublime-workspace
+
+# --- Environment & secrets (frontend + backend) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.json
+
+# =============================================================================
+# FRONTEND (Vite + React — project root)
+# =============================================================================
+
+node_modules/
+dist/
+build/
+.vite/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+coverage/
+*.tsbuildinfo
+.eslintcache
+
+# =============================================================================
+# BACKEND (Django — backend/)
+# =============================================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+backend/.venv/
+backend/venv/
+backend/env/
+.venv/
+venv/
+env/
+
+# Django
+backend/db.sqlite3
+backend/db.sqlite3-journal
+backend/*.log
+backend/local_settings.py
+backend/staticfiles/
+backend/collected_static/
+
+# User uploads & generated media (keep folder via .gitkeep if needed)
+backend/media/*
+!backend/media/.gitkeep
+
+# pytest / coverage
+backend/.pytest_cache/
+backend/.coverage
+backend/htmlcov/
+backend/.mypy_cache/
+backend/.ruff_cache/
+
+# =============================================================================
+# Optional: lockfiles — uncomment if you prefer not to commit them
+# =============================================================================
+# package-lock.json
+# pnpm-lock.yaml

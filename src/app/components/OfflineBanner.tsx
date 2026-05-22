@@ -1,0 +1,28 @@
+import { useEffect, useState } from "react";
+import { WifiOff } from "lucide-react";
+import { useLanguage } from "../../context/LanguageContext";
+
+export default function OfflineBanner() {
+  const { t } = useLanguage();
+  const [offline, setOffline] = useState(!navigator.onLine);
+
+  useEffect(() => {
+    const on = () => setOffline(false);
+    const off = () => setOffline(true);
+    window.addEventListener("online", on);
+    window.addEventListener("offline", off);
+    return () => {
+      window.removeEventListener("online", on);
+      window.removeEventListener("offline", off);
+    };
+  }, []);
+
+  if (!offline) return null;
+
+  return (
+    <div className="bg-amber-600 text-white text-center text-sm py-2 px-4 flex items-center justify-center gap-2 safe-top">
+      <WifiOff className="size-4 flex-shrink-0" />
+      <span>{t.offline.message}</span>
+    </div>
+  );
+}
